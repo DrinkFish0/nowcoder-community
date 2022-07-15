@@ -7,23 +7,22 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 
 /**
- * 用户
+ * 评论
  * @author DrinkFish
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class DiscussPost {
     private int id;
-    private String username;
-    private String password;
-    private String salt;
-    private String email;
-    /** 0-普通用户; 1-超级管理员; 2-版主; */
+    private int userId;
+    private String title;
+    private String content;
+    /** 0-普通; 1-置顶; */
     private int type;
-    /** 0-未激活; 1-已激活; */
+    /** 0-正常; 1-精华; 2-拉黑; */
     private int status;
-    private String activationCode;
-    private String headerUrl;
     private Date createTime;
+    private int commentCount;
+    private double score;
 }
